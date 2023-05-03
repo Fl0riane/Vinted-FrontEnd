@@ -1,11 +1,11 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import picture from "../img/photohome.jpg";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
 const Home = () => {
   const [data, setData] = useState();
-  const [IsLoading, setIsLoading] = useState();
+  const [IsLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -22,7 +22,7 @@ const Home = () => {
     fetchData();
   }, []);
 
-  const id = 123456;
+  // const id = 123456;
   return IsLoading ? (
     <p>Page is Loading</p>
   ) : (
@@ -37,18 +37,42 @@ const Home = () => {
           </a>
         </div>
       </section>
-      <section className="container">
+      <section className="container main">
         {data.offers.map((offer) => {
           console.log(offer);
           return (
-            <div key={offer._id}>
-              <p>{offer.owner.account.usernme}</p>
-            </div>
+            <article key={offer._id}>
+              {IsLoading ? (
+                <p>Laoding...</p>
+              ) : (
+                <div>
+                  <p>{offer.owner.account.username}</p>
+                  <img
+                    key={offer.product_image.url}
+                    src={offer.product_image.url}
+                  ></img>
+                  <div>
+                    <p className="price">{offer.product_price} € </p>
+                    <div>
+                      {offer.product_details.map((elem) => {
+                        console.log(elem);
+                        return (
+                          <div key={elem._id}>
+                            <p>{elem.TAILLE}</p>
+                            <p>{elem.MARQUE}</p>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                </div>
+              )}
+            </article>
           );
         })}
       </section>
 
-      <Link to={`/offer/${id}`}>ALLER SUR OFFER</Link>
+      {/* <Link to={`/offer/${id}`}>ALLER SUR OFFER</Link> */}
     </div>
   );
 };

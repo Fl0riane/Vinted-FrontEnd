@@ -7,8 +7,14 @@ h1 {
   line-height: 42.5px;
   margin-bottom: 36px;
 }
+p {
+  color: rgba(107, 103, 103, 0.601);
+  font-size: 12px;
+  margin-bottom: 5px;
+  padding-left: 10px;
+}
 .container {
-  width: 1300px;
+  width: 1220px;
   margin: 0 auto;
 }
 
@@ -44,6 +50,7 @@ header div :last-child button {
 /*------------Hero---*/
 .hero {
   position: relative;
+  margin-bottom: 20px;
 }
 .hero img {
   height: 590px;
@@ -78,4 +85,23 @@ header div :last-child button {
 .hero a {
   text-decoration: underline;
   color: #027580;
+}
+
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  justify-content: space-between;
+}
+
+.main article {
+  margin-bottom: 20px;
+}
+.main img {
+  padding-bottom: 10px;
+  height: 360px;
+  width: 235px;
+}
+.main .price {
+  color: black;
 }
