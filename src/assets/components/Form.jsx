@@ -1,10 +1,9 @@
+import { Link } from "react-router-dom";
+
 const Form = ({
   userName,
   email,
   password,
-  setUserName,
-  setPassword,
-  setEmail,
   handleEmailChange,
   handleNameChange,
   handlePasswordChange,
@@ -12,8 +11,13 @@ const Form = ({
   const handleSubmit = (event) => {
     event.preventDefault(); // Pour empêcher le navigateur de changer de page lors de la soumission du formulaire
     console.log(userName, email, password);
-
-    return (
+  };
+  const handleCheck = () => {
+    return <p>chheck</p>;
+  };
+  return (
+    <div className="form">
+      <h2>S'inscrire</h2>
       <form onSubmit={handleSubmit}>
         <input
           placeholder="Nom d'utilisateur"
@@ -33,9 +37,26 @@ const Form = ({
           name="password"
           onChange={handlePasswordChange}
         />
+        <input
+          type="checkbox"
+          placeholder="S'inscrire à notre newletter"
+          onChange={() => {
+            handleCheck();
+          }}
+        />
+        <p className="checkbox">
+          En m'inscrivant je confirme avoir lu et accepté les Termes &
+          Conditions et Politique de Confidentialité de Vinted. Je confirme
+          avoir au moins 18 ans
+        </p>
         <button type="submit"> S'inscrire</button>
+        <Link to="/login">
+          {" "}
+          <p>Tu as déjà un compte ? Connecte-toi !</p>
+        </Link>
       </form>
-    );
-  };
+    </div>
+  );
 };
+
 export default Form;

@@ -1,8 +1,7 @@
 import { useState } from "react";
-import Form from "../components/Form";
+import LoginForm from "../components/LoginForm";
 
-const SignUp = () => {
-  const [userName, setUserName] = useState("");
+const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -16,23 +15,15 @@ const SignUp = () => {
     setPassword(value);
   };
 
-  const handleNameChange = (event) => {
-    const value = event.target.value;
-    setUserName(value);
-  };
-
   return (
-    <Form
-      userName={userName}
-      password={password}
+    <LoginForm
       email={email}
-      setUserName={setUserName}
+      password={password}
       setPassword={setPassword}
       setEmail={setEmail}
       handleEmailChange={handleEmailChange}
-      handleNameChange={handleNameChange}
       handlePasswordChange={handlePasswordChange}
     />
   );
 };
-export default SignUp;
+export default Login;
