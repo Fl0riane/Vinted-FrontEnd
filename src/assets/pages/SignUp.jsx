@@ -1,7 +1,11 @@
 import { useState } from "react";
 import Form from "../components/Form";
+import axios from "axios";
+import { useEffect } from "react";
 
 const SignUp = () => {
+  const [data, setData] = useState({});
+  const [IsLoading, setIsLoading] = useState(true);
   const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -20,32 +24,23 @@ const SignUp = () => {
     const value = event.target.value;
     setUserName(value);
   };
-
-  return (
-    // <div>
-    //   <h1>S'inscrire</h1>
-    //   <form onSubmit={handleSubmit}>
-    //     <input
-    //       placeholder="Nom d'utilisateur"
-    //       type="text"
-    //       name="userName"
-    //       onChange={handleNameChange}
-    //     />
-    //     <input
-    //       placeholder="Email"
-    //       type="email"
-    //       name="email"
-    //       onChange={handleEmailChange}
-    //     />
-    //     <input
-    //       placeholder="Mot de passe"
-    //       type="password"
-    //       name="password"
-    //       onChange={handlePasswordChange}
-    //     />
-    //     <button type="submit"> S'inscrire</button>
-    //   </form>
-    // </div>
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          `https://lereacteur-vinted-api.herokuapp.com/signup`
+        );
+        setData(response.data);
+        setIsLoading(false);
+      } catch (error) {
+        console.log(error.message);
+      }
+    };
+    fetchData();
+  }, []);
+  return IsLoading ? (
+    <p>Loading...</p>
+  ) : (
     <div className="container">
       <Form
         userName={userName}
