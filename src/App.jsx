@@ -4,14 +4,16 @@ import "./App.css";
 import Offer from "./assets/pages/Offer";
 import Home from "./assets/pages/Home";
 import Header from "./assets/components/Header";
+import NoMatch from "./assets/pages/NoMatch";
 
 function App() {
   return (
     <Router>
       <Header />
       <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/offer/:id" element={<Offer />}></Route>
+        <Route path="/" element={<Home />} />
+        <Route path="/offer/:id" element={<Offer />} />
+        <Route path="*" element={<NoMatch />} />
       </Routes>
     </Router>
   );

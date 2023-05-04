@@ -1,16 +1,22 @@
+import { Link } from "react-router-dom";
 import logo from "../../assets/img/logo.png";
 
 const Header = () => {
   return (
-    <header className="container">
-      <img src={logo} alt="logo Vinted" />
-      <div>
-        <button>S'inscrire</button>
-        <button>Se connecter</button>
+    <header>
+      <span className="container">
+        <Link to="/">
+          <img src={logo} alt="logo Vinted" />
+        </Link>
+
         <div>
-          <button>Vendre tes articles</button>
+          <button>S'inscrire</button>
+          <button>Se connecter</button>
+          <div>
+            <button>Vendre tes articles</button>
+          </div>
         </div>
-      </div>
+      </span>
     </header>
   );
 };
