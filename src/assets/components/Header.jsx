@@ -10,7 +10,10 @@ const Header = () => {
         </Link>
 
         <div>
-          <button>S'inscrire</button>
+          <Link to="/signup">
+            <button>S'inscrire</button>
+          </Link>
+
           <button>Se connecter</button>
           <div>
             <button>Vendre tes articles</button>
