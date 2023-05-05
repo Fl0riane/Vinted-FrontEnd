@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import logo from "../../assets/img/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-const Header = () => {
+const Header = ({ token, handleToken }) => {
   return (
     <header>
       <span className="container">
@@ -16,19 +16,28 @@ const Header = () => {
             placeholder="Recherche des articles"
           />
         </div>
-
-        <div>
-          <Link to="/signup">
-            <button>S'inscrire</button>
-          </Link>
-
-          <Link to="/login">
-            <button>Se connecter</button>
-          </Link>
+        {token ? (
+          <button
+            onClick={() => {
+              handleToken(null);
+            }}
+          >
+            Se deconnecter
+          </button>
+        ) : (
           <div>
-            <button>Vendre tes articles</button>
+            <Link to="/signup">
+              <button>S'inscrire</button>
+            </Link>
+
+            <Link to="/login">
+              <button>Se connecter</button>
+            </Link>
+            <div>
+              <button>Vendre tes articles</button>
+            </div>
           </div>
-        </div>
+        )}
       </span>
     </header>
   );

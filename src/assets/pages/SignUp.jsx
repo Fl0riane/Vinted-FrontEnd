@@ -1,8 +1,8 @@
 import { useState } from "react";
 import Form from "../components/Form";
 
-const SignUp = () => {
-  const [userName, setUserName] = useState("");
+const SignUp = ({ handleToken }) => {
+  const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -18,20 +18,21 @@ const SignUp = () => {
 
   const handleNameChange = (event) => {
     const value = event.target.value;
-    setUserName(value);
+    setUsername(value);
   };
 
   return (
     <Form
-      userName={userName}
+      username={username}
       password={password}
       email={email}
-      setUserName={setUserName}
+      setUsername={setUsername}
       setPassword={setPassword}
       setEmail={setEmail}
       handleEmailChange={handleEmailChange}
       handleNameChange={handleNameChange}
       handlePasswordChange={handlePasswordChange}
+      handleToken={handleToken}
     />
   );
 };

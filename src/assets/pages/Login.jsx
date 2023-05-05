@@ -1,7 +1,7 @@
 import { useState } from "react";
 import LoginForm from "../components/LoginForm";
 
-const Login = () => {
+const Login = ({ handleToken }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -23,6 +23,7 @@ const Login = () => {
       setEmail={setEmail}
       handleEmailChange={handleEmailChange}
       handlePasswordChange={handlePasswordChange}
+      handleToken={handleToken}
     />
   );
 };

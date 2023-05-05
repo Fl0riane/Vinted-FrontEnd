@@ -231,8 +231,6 @@ header div :last-child button {
 /*-----------------Form---------*/
 
 form input {
-  all: unset;
-  font-size: 18px;
   font: #cfcfcf;
   width: 280px;
   padding-bottom: 10px;
@@ -270,4 +268,9 @@ form input {
   text-align: start;
   padding: 0 10px;
   line-height: 14px;
+}
+#newsletter {
+  width: 10px;
+  height: 10px;
+  border: 1px solid black;
 }
