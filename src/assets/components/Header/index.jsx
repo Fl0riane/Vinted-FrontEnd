@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
-import logo from "../../assets/img/logo.png";
+import logo from "../../img/logo.png";
+import "./header.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-const Header = ({ token, handleToken }) => {
+const Header = ({ token, handleToken, visible, setVisible }) => {
   return (
     <header>
       <span className="container">
@@ -30,9 +31,15 @@ const Header = ({ token, handleToken }) => {
               <button>S'inscrire</button>
             </Link>
 
-            <Link to="/login">
-              <button>Se connecter</button>
-            </Link>
+            {/* <Link to="/login"> */}
+            <button
+              onClick={() => {
+                setVisible(!visible);
+              }}
+            >
+              Se connecter
+            </button>
+            {/* </Link> */}
             <div>
               <button>Vendre tes articles</button>
             </div>

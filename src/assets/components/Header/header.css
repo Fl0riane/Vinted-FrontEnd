@@ -1,0 +1,50 @@
+header {
+  height: 60px;
+  border-bottom: 1px solid #c4c4c4;
+  display: flex;
+  align-items: center;
+}
+
+header span {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header img {
+  width: 110px;
+}
+header div {
+  display: flex;
+  gap: 20px;
+}
+
+header button {
+  width: 110px;
+  border: 1px solid #027580;
+  color: #027580;
+  font-size: 12px;
+  line-height: 10px;
+  height: 30px;
+  text-align: center;
+  border-radius: 5px;
+}
+.research {
+  padding-left: 10px;
+  background-color: #f5f6f7;
+  border: none;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  width: 630px;
+  border-radius: 5px;
+}
+
+.research input {
+  border: none;
+}
+header div :last-child button {
+  margin-left: 20px;
+  background-color: #027580;
+  color: white;
+}

@@ -13,6 +13,7 @@ import Login from "./assets/pages/Login";
 /*-------Components---------*/
 import Header from "./assets/components/Header";
 import Footer from "./assets/components/Footer";
+import Modal from "./assets/components/Modal";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 library.add(faMagnifyingGlass);
@@ -29,22 +30,35 @@ function App() {
       Cookies.remove("vintedToken");
     }
   };
+  const [visible, setVisible] = useState(false);
 
   return (
-    <Router>
-      <Header token={token} handleToken={handleToken} />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/offer/:id" element={<Offer />} />
-        <Route path="*" element={<NoMatch />} />
-        <Route path="/signup" element={<SignUp handleToken={handleToken} />} />
-        <Route
-          path="/login"
-          element={<Login handleToken={handleToken} />}
-        ></Route>
-      </Routes>
-      <Footer />
-    </Router>
+    <div className="app">
+      <Router>
+        <Header
+          token={token}
+          handleToken={handleToken}
+          visible={visible}
+          setVisible={setVisible}
+        />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/offer/:id" element={<Offer />} />
+          <Route path="*" element={<NoMatch />} />
+          <Route
+            path="/signup"
+            element={<SignUp handleToken={handleToken} />}
+          />
+          <Route
+            path="/login"
+            element={<Login handleToken={handleToken} />}
+          ></Route>
+        </Routes>
+        <Footer />
+
+        {visible && <Modal setVisible={setVisible} />}
+      </Router>
+    </div>
   );
 }
 
