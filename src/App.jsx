@@ -12,6 +12,7 @@ import Login from "./assets/pages/Login";
 
 /*-------Components---------*/
 import Header from "./assets/components/Header";
+import Footer from "./assets/components/Footer";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 library.add(faMagnifyingGlass);
@@ -42,6 +43,7 @@ function App() {
           element={<Login handleToken={handleToken} />}
         ></Route>
       </Routes>
+      <Footer />
     </Router>
   );
 }
