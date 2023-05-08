@@ -1,19 +1,67 @@
 .modal-root {
   position: absolute;
-
   background-color: rgba(102, 102, 102, 0.8);
-  /* Pour que la modal prenne tout l'écran : */
   height: 100%;
   width: 100vw;
   top: 0;
   align-items: start;
+}
+
+.modal {
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 1);
+  width: 350px;
+  height: 450px;
+  opacity: unset;
+  margin: 200px auto;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 20px;
+  border-radius: 5px;
+}
+.modal > button:first-child {
+  text-align: end;
+  font-size: 24px;
+}
+.modal h2 {
+  margin-top: 10px;
+}
+.modal nav {
   display: flex;
   justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border: 1px solid black;
+  margin-bottom: 10px;
+  border-radius: 5px;
 }
-.modal {
-  margin-top: 300px;
-  background-color: rgba(255, 255, 255, 1);
-  width: 700px;
-  height: 400px;
-  opacity: unset;
+.modal div {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal :last-child > div {
+  border-bottom: 1px solid #c4c4c4;
+  padding-bottom: 20px;
+}
+.modal p {
+  all: unset;
+
+  font-size: 14px;
+}
+.modal .blue {
+  margin-left: 2px;
+  color: #027580;
+}
+.modal img {
+  width: 20px;
+}
+.modal .minus p {
+  font-size: 12px;
+}
+.modal .minus .blue {
+  border-bottom: solid 1px #027580;
 }

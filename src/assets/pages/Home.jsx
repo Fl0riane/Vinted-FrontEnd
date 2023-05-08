@@ -1,9 +1,8 @@
 import backgroundimg from "../img/photohome.jpg";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-
-const Home = () => {
+import Offer from "../components/Offer";
+const Home = ({ research }) => {
   const [data, setData] = useState();
   const [IsLoading, setIsLoading] = useState(true);
 
@@ -11,7 +10,7 @@ const Home = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://lereacteur-vinted-api.herokuapp.com/offers"
+          `https://lereacteur-vinted-api.herokuapp.com/offers?title=${research}`
         );
         setData(response.data);
         setIsLoading(false);
@@ -20,7 +19,7 @@ const Home = () => {
       }
     };
     fetchData();
-  }, []);
+  }, [research]);
 
   return IsLoading ? (
     <p>Page is Loading</p>
@@ -38,45 +37,9 @@ const Home = () => {
       </section>
       <section className="container main">
         {data.offers.map((offer) => {
-          return (
-            <Link to={`/offer/${offer._id}`} key={offer._id}>
-              <article>
-                <span className="user">
-                  {offer.owner.account.avatar && (
-                    <img
-                      src={offer.owner.account.avatar.secure_url}
-                      alt="avatar"
-                    />
-                  )}
-
-                  <p>{offer.owner.account.username}</p>
-                </span>
-
-                <img
-                  key={offer.product_image.url}
-                  src={offer.product_image.url}
-                  alt="article"
-                ></img>
-
-                <p className="price">{offer.product_price} € </p>
-                <div>
-                  {offer.product_details.map((detail) => {
-                    // console.log(elem);
-                    return (
-                      <div key={detail._id}>
-                        <p>{detail.TAILLE}</p>
-                        <p>{detail.MARQUE}</p>
-                      </div>
-                    );
-                  })}
-                </div>
-              </article>
-            </Link>
-          );
+          return <Offer key={offer._id} offerData={offer} />;
         })}
       </section>
-
-      {/* <Link to={`/offer/${id}`}>ALLER SUR OFFER</Link> */}
     </div>
   );
 };

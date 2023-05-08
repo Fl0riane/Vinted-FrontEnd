@@ -28,6 +28,10 @@ h4 {
   color: #4d4d4d;
   margin-bottom: 15px;
 }
+
+h5 {
+  font-size: 16px;
+}
 p {
   color: #c4c4c4;
   font-size: 12px;
@@ -122,96 +126,28 @@ input {
   height: 25px;
 }
 
-/*-------------Offer---------*/
-.offer {
-  background-color: #ebedee;
-}
-.offer p {
-  font-size: 16px;
-  margin-bottom: 20px;
-}
-.offer .top {
-  padding-bottom: 70px;
-  margin-top: 10px;
-  border-bottom: 1px solid #ebedee;
-}
-.offer article {
-  margin: 0 auto;
-  padding: 30px;
-  width: 980px;
-  display: flex;
-  justify-content: space-between;
-  height: 600px;
-  padding-bottom: 200px;
-}
-
-.offer article:first-child > div {
-  box-sizing: border-box;
-  padding: 35px;
-  display: flex;
-  background-color: white;
-  flex-direction: column;
-  width: 400px;
-}
-
-.offer .user img {
-  width: 50px;
-  height: 50px;
-}
-
-.offer .details {
-  display: flex;
-  margin-bottom: 6px;
-}
-
-.offer .details span {
-  font-size: 14px;
-}
-.offer .details > span:first-child {
-  width: 45%;
-  color: #c4c4c4;
-}
-.offer .bottom {
-  margin: 70px 0;
-}
-
-.offer .bottom > p:first-child {
-  color: black;
-  font-weight: bold;
-}
-
-.offer .bottom > p:last-child p {
-  color: black;
-}
-.offer button {
-  background-color: #027580;
-  color: white;
-  text-align: center;
-  font-size: 16px;
-  line-height: 22px;
-  padding: 6px;
-  border-radius: 5px;
-}
-/*-----------------Form---------*/
-
-form input {
-  font: #cfcfcf;
-  width: 280px;
-  padding-bottom: 10px;
-  margin-bottom: 30px;
-  border: none;
-  border-bottom: 1px solid #fcced3;
-}
+/*-----------------Modal---------*/
 .form {
-  margin: 50px auto;
+  padding-top: 30px;
+  background-color: rgba(255, 255, 255, 1);
+  margin: 200px auto;
   width: 290px;
-  height: 490px;
+  height: 500px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.form button {
+.form input {
+  font: #cfcfcf;
+  width: 290px;
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fcced3;
+}
+
+.form :last-child button {
   box-sizing: border-box;
   background-color: #027580;
   color: white;
@@ -220,7 +156,6 @@ form input {
   line-height: 22px;
   padding: 10px;
   border-radius: 5px;
-  margin: 15px 0px;
   width: 290px;
 }
 .form p {
@@ -237,24 +172,4 @@ form input {
 
 #newsletter {
   all: revert;
-}
-
-/*----------Footer--------*/
-footer {
-  background-color: #f2f2f2;
-  height: 550px;
-}
-footer .container {
-  display: flex;
-  justify-content: space-between;
-}
-footer .container nav {
-  display: flex;
-  flex-direction: column;
-}
-footer .container a {
-  font-size: 15px;
-  line-height: 24px;
-  color: #757575;
-  margin-bottom: 8px;
 }

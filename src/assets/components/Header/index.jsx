@@ -2,7 +2,17 @@ import { Link } from "react-router-dom";
 import logo from "../../img/logo.png";
 import "./header.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-const Header = ({ token, handleToken, visible, setVisible }) => {
+import { useNavigate } from "react-router-dom";
+
+const Header = ({
+  token,
+  handleToken,
+  visible,
+  setVisible,
+  research,
+  setResearch,
+}) => {
+  const navigate = useNavigate;
   return (
     <header>
       <span className="container">
@@ -15,6 +25,10 @@ const Header = ({ token, handleToken, visible, setVisible }) => {
             type="text"
             name="header input"
             placeholder="Recherche des articles"
+            value={research}
+            onChange={(event) => {
+              setResearch(event.target.value);
+            }}
           />
         </div>
         {token ? (
@@ -27,24 +41,20 @@ const Header = ({ token, handleToken, visible, setVisible }) => {
           </button>
         ) : (
           <div>
-            <Link to="/signup">
-              <button>S'inscrire</button>
-            </Link>
-
-            {/* <Link to="/login"> */}
             <button
               onClick={() => {
                 setVisible(!visible);
               }}
             >
-              Se connecter
+              S'inscrire | Se connecter
             </button>
-            {/* </Link> */}
-            <div>
-              <button>Vendre tes articles</button>
-            </div>
           </div>
         )}
+        <div>
+          <Link to="/offer/publish">
+            <button>Vendre tes articles</button>
+          </Link>
+        </div>
       </span>
     </header>
   );

@@ -15,6 +15,7 @@ const LoginForm = ({
   return (
     <div className="form">
       <h2>Se connecter</h2>
+
       <form
         onSubmit={async (event) => {
           event.preventDefault();
