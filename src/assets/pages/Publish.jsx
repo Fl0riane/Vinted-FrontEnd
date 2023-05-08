@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useState, useNavigate } from "react";
 import axios from "axios";
 
-const PublishForm = ({ handlToken }) => {
-  // const [picture, setPicture] = useState();
+const PublishForm = ({ token }) => {
+  const [picture, setPicture] = useState();
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [marque, setMarque] = useState("");
@@ -11,44 +11,52 @@ const PublishForm = ({ handlToken }) => {
   const [etat, setEtat] = useState("");
   const [lieu, setLieu] = useState("");
   const [prix, setPrix] = useState("");
-  const token = handlToken;
+  const navigate = useNavigate;
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
       const formData = new FormData();
-      // formData.append("product_image.url", picture);
-      formData.append("product_name", title);
-      formData.append("product_description", description);
-      formData.append("product_details.MARQUE", marque);
-      formData.append("product_details.TAILLE", taille);
-      formData.append("product.details.COULEUR", couleur);
-      formData.append("product.details.ETAT", etat);
-      formData.append("product.details.EMPLACEMENT", lieu);
-      formData.append("product_price", prix);
+      formData.append("picture", picture);
+      formData.append("title", title);
+      formData.append("description", description);
+      formData.append("brand", marque);
+      formData.append("size", taille);
+      formData.append("color", couleur);
+      formData.append("condition", etat);
+      formData.append("city", lieu);
+      formData.append("price", prix);
 
       const response = await axios.post(
         "https://lereacteur-vinted-api.herokuapp.com/offer/publish",
         formData,
         {
-          hearders: {
-            authorizattion: `Bearer ${token}`,
+          headers: {
+            authorization: `Bearer ${token}`,
             "Content-Type": "multipart/form-data",
           },
         }
       );
-      console.log({ token });
+      // console.log(token);
       console.log(response.data);
+      navigate("/");
     } catch (error) {
-      console.log(error.message);
+      console.log(error.response.data);
     }
   };
 
   return (
     <div className="container">
+      <h2>Vends ton article</h2>
       <div className="form">
         <form onSubmit={handleSubmit}>
-          <label htmlFor="">Titre</label>
+          <label htmlFor="Title">Titre</label>
+          <input
+            type="file"
+            onChange={(event) => {
+              setPicture(event.target.files[0]);
+            }}
+          ></input>
           <input
             id="Titre"
             type="text"
@@ -123,7 +131,7 @@ const PublishForm = ({ handlToken }) => {
             <input
               id="Prix"
               type="text"
-              placeholder="ex : 40€"
+              placeholder="ex : 40"
               value={prix}
               onChange={(event) => {
                 setPrix(event.target.value);

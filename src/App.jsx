@@ -57,11 +57,10 @@ function App() {
             path="/login"
             element={<Login handleToken={handleToken} />}
           ></Route>
-
           <Route
             path="/offer/publish"
-            element={<Publish handleToken={handleToken} />}
-          />
+            element={<Publish token={token} />}
+          ></Route>
         </Routes>
         <Footer />
         {visible && <Modal setVisible={setVisible} />}

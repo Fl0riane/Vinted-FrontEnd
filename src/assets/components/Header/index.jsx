@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import logo from "../../img/logo.png";
 import "./header.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useNavigate } from "react-router-dom";
 
 const Header = ({
   token,
@@ -12,7 +11,6 @@ const Header = ({
   research,
   setResearch,
 }) => {
-  const navigate = useNavigate;
   return (
     <header>
       <span className="container">
@@ -51,9 +49,15 @@ const Header = ({
           </div>
         )}
         <div>
-          <Link to="/offer/publish">
-            <button>Vendre tes articles</button>
-          </Link>
+          {token ? (
+            <Link to="/offer/publish">
+              <button>Vendre tes articles</button>
+            </Link>
+          ) : (
+            <Link to="/Login">
+              <button>Vendre tes articles</button>
+            </Link>
+          )}
         </div>
       </span>
     </header>
