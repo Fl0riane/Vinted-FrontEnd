@@ -6,7 +6,7 @@ const Offer = () => {
   const [data, setData] = useState({});
   const [IsLoading, setIsLoading] = useState(true);
   const { id } = useParams();
-  console.log({ id });
+  // console.log({ id });
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -24,7 +24,6 @@ const Offer = () => {
   return IsLoading ? (
     <p>Loading...</p>
   ) : (
-    // <p>{`je suis dans offer ${id}`}</p>;
     <section className="offer">
       <article key={data._id}>
         <img src={data.product_image.url} alt="article"></img>
@@ -44,12 +43,12 @@ const Offer = () => {
           <div className="bottom">
             <p>{data.product_name}</p>
             <p>{data.product_description}</p>
-            <p className="user">
+            <div className="user">
               {data.owner.account.avatar && (
                 <img src={data.owner.account.avatar.secure_url} alt="avatar" />
               )}
               <p>{data.owner.account.username}</p>
-            </p>
+            </div>
           </div>
           <button>Acheter</button>
         </div>

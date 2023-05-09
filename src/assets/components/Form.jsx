@@ -70,7 +70,7 @@ const Form = ({
         />
         <div>
           <input
-            id="newsletter"
+            id="checkbox"
             type="checkbox"
             onChange={() => {
               setNewsletter(!newsletter);

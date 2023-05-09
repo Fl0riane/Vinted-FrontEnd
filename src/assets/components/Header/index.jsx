@@ -30,13 +30,15 @@ const Header = ({
           />
         </div>
         {token ? (
-          <button
-            onClick={() => {
-              handleToken(null);
-            }}
-          >
-            Se deconnecter
-          </button>
+          <Link to="/">
+            <button
+              onClick={() => {
+                handleToken(null);
+              }}
+            >
+              Se deconnecter
+            </button>
+          </Link>
         ) : (
           <div>
             <button
@@ -49,15 +51,9 @@ const Header = ({
           </div>
         )}
         <div>
-          {token ? (
-            <Link to="/offer/publish">
-              <button>Vendre tes articles</button>
-            </Link>
-          ) : (
-            <Link to="/Login">
-              <button>Vendre tes articles</button>
-            </Link>
-          )}
+          <Link to={token ? "/publish" : "/login"}>
+            <button>Vendre tes articles</button>
+          </Link>
         </div>
       </span>
     </header>

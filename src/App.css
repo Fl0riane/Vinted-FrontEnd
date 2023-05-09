@@ -170,6 +170,50 @@ input {
   line-height: 14px;
 }
 
-#newsletter {
+#checkbox {
   all: revert;
+}
+.grey {
+  background-color: #f2f2f2;
+}
+.post {
+  width: 1220px;
+  margin: 0 auto;
+  background-color: #f2f2f2;
+  display: flex;
+  flex-direction: column;
+}
+.grey h2 {
+  padding-top: 30px;
+  margin-left: 350px;
+}
+.post div {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  margin-bottom: 30px;
+  padding: 20px;
+}
+.post input {
+  width: 1220px;
+  margin-bottom: 30px;
+  display: flex;
+  border-bottom: 1px solid #f2f2f2;
+}
+.post span {
+  display: flex;
+  justify-content: space-arround;
+  gap: 10px;
+}
+.post button {
+  width: 50px;
+  background-color: #027580;
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  line-height: 22px;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  margin-left: 1150px;
 }

@@ -53,14 +53,9 @@ function App() {
             path="/signup"
             element={<SignUp handleToken={handleToken} />}
           />
-          <Route
-            path="/login"
-            element={<Login handleToken={handleToken} />}
-          ></Route>
-          <Route
-            path="/offer/publish"
-            element={<Publish token={token} />}
-          ></Route>
+          <Route path="/login" element={<Login handleToken={handleToken} />} />
+
+          <Route path="/publish" element={<Publish token={token} />} />
         </Routes>
         <Footer />
         {visible && <Modal setVisible={setVisible} />}
