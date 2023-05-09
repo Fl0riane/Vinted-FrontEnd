@@ -1,7 +1,7 @@
 import "./modal.css";
 import { Link } from "react-router-dom";
 import "../LoginForm";
-import "../Form";
+import "../SignUpForm";
 import logoFb from "../../assets/img/logofb.png";
 import logoGoogle from "../../assets/img/logogoogle.png";
 import logoApple from "../../assets/img/logoapple.png";

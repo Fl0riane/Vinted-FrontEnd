@@ -61,11 +61,13 @@ const CheckoutForm = ({ token, price, title }) => {
           </div>
 
           <div>
-            <h2>Total</h2> <h2>{total.toFixed(2)} €</h2>
+            <span>
+              <h2>Total</h2> <h2>{total.toFixed(2)} €</h2>
+            </span>
             <h2>
               Il ne vous reste plus qu'un étape pour vous offrir {title}. Vous
-              allez payer {total}€ (frais de protection et frais de port
-              inclus).
+              allez payer {total.toFixed(2)}€ (frais de protection et frais de
+              port inclus).
             </h2>
           </div>
 
@@ -75,7 +77,7 @@ const CheckoutForm = ({ token, price, title }) => {
             <p>paiement validé</p>
           ) : (
             <button type="submit" disabled={isLoading}>
-              Pay
+              Paiement
             </button>
           )}
         </div>

@@ -47,8 +47,8 @@ const PublishForm = ({ token }) => {
 
   return token ? (
     <section className="grey">
-      <h2>Vends ton article</h2>
       <div className="post">
+        <h2>Vends ton article</h2>
         <form onSubmit={handleSubmit}>
           <div>
             <input
@@ -138,7 +138,9 @@ const PublishForm = ({ token }) => {
             />
           </div>
         </form>
-        <button type="Submit">Ajouter</button>
+        <span>
+          <button type="Submit">Ajouter</button>
+        </span>
       </div>
     </section>
   ) : (

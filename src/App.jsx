@@ -16,14 +16,19 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
+import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
 import Modal from "./components/Modal";
 
-library.add(faMagnifyingGlass);
+library.add(faMagnifyingGlass, faArrowUp, faArrowDown);
 
 function App() {
   const [token, setToken] = useState(Cookies.get("vintedToken") || null);
 
   const [research, setResearch] = useState("");
+  const [sort, setSort] = useState("");
+  const [prixMini, setPrixMini] = useState("");
+  const [prixMaxi, setPrixMaxi] = useState("");
 
   const handleToken = (token) => {
     if (token) {
@@ -46,9 +51,25 @@ function App() {
           setVisible={setVisible}
           research={research}
           setResearch={setResearch}
+          sort={sort}
+          setSort={setSort}
+          prixMaxi={prixMaxi}
+          setPrixMaxi={setPrixMaxi}
+          prixMini={prixMini}
+          setPrixMini={setPrixMini}
         />
         <Routes>
-          <Route path="/" element={<Home research={research} />} />
+          <Route
+            path="/"
+            element={
+              <Home
+                research={research}
+                prixMaxi={prixMaxi}
+                prixMini={prixMini}
+                sort={sort}
+              />
+            }
+          />
           <Route path="/offer/:id" element={<Offer token={token} />} />
           <Route path="*" element={<NoMatch />} />
           <Route

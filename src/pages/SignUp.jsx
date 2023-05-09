@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Form from "../components/Form";
+import Form from "../components/SignUpForm";
 
 const SignUp = ({ handleToken }) => {
   const [username, setUsername] = useState("");

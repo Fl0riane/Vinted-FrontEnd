@@ -1,11 +1,11 @@
 header {
-  height: 60px;
-  border-bottom: 1px solid #c4c4c4;
+  height: 80px;
+  border-bottom: 1px solid #f2f2f2;
   display: flex;
   align-items: center;
 }
 
-header span {
+header section {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -15,8 +15,17 @@ header img {
   width: 110px;
 }
 header div {
+  align-items: center;
   display: flex;
   gap: 10px;
+}
+header div:last-child {
+  justify-content: space-between;
+}
+header div:last-child input {
+  padding: 5px;
+  border: 1px solid #f2f2f2;
+  text-align: center;
 }
 
 header button {
@@ -35,15 +44,14 @@ header button {
   display: flex;
   align-items: center;
   height: 40px;
-  width: 630px;
+  width: 650px;
   border-radius: 5px;
 }
 
-.research input {
+header input {
   border: none;
 }
 header div :last-child button {
-  margin-left: 20px;
   background-color: #027580;
   color: white;
 }

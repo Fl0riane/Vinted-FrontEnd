@@ -177,8 +177,10 @@ input {
   background-color: #f2f2f2;
   padding-top: 100px;
 }
+
+/*--------------Post offer--------*/
 .post {
-  width: 1220px;
+  width: 800px;
   margin: 0 auto;
   background-color: #f2f2f2;
   display: flex;
@@ -186,7 +188,6 @@ input {
 }
 .grey h2 {
   padding-top: 30px;
-  margin-left: 350px;
 }
 .post div {
   display: flex;
@@ -199,11 +200,14 @@ input {
   width: 1220px;
   margin-bottom: 30px;
   display: flex;
+  justify-content: space-around;
   border-bottom: 1px solid #f2f2f2;
 }
+
 .post span {
   display: flex;
-  justify-content: space-arround;
+  justify-content: end;
+
   gap: 10px;
 }
 .post button {
@@ -216,24 +220,29 @@ input {
   padding: 10px;
   border-radius: 5px;
   margin-bottom: 15px;
-  margin-left: 1150px;
 }
 
+/*-----------Post payment-----------*/
+
+.littlePost {
+  margin: 0 auto;
+  width: 700px;
+}
 .littlePost div {
   border-bottom: 1px solid #f2f2f2;
 }
 .littlePost h4 {
-  width: 1220px;
   margin-bottom: 30px;
   display: flex;
 }
+
 .littlePost span {
   display: flex;
-  justify-content: space-arround;
+  justify-content: space-between;
   gap: 10px;
 }
 .littlePost button {
-  width: 50px;
+  all: unset;
   background-color: #027580;
   color: white;
   text-align: center;

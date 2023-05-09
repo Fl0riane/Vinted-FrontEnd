@@ -1,5 +1,5 @@
 .offer {
-  background-color: #ebedee;
+  background-color: #f2f2f2;
 }
 .offer p {
   font-size: 16px;
@@ -8,7 +8,7 @@
 .offer .top {
   padding-bottom: 70px;
   margin-top: 10px;
-  border-bottom: 1px solid #ebedee;
+  border-bottom: 1px solid #f2f2f2;
 }
 .offer article {
   margin: 0 auto;

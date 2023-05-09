@@ -10,25 +10,75 @@ const Header = ({
   setVisible,
   research,
   setResearch,
+  prixMini,
+  setPrixMini,
+  prixMaxi,
+  setPrixMaxi,
+  sort,
+  setSort,
 }) => {
   return (
     <header>
-      <span className="container">
+      <section className="container">
         <Link to="/">
           <img src={logo} alt="logo Vinted" />
         </Link>
-        <div className="research">
-          <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" />
-          <input
-            type="text"
-            name="header input"
-            placeholder="Recherche des articles"
-            value={research}
-            onChange={(event) => {
-              setResearch(event.target.value);
-            }}
-          />
-        </div>
+        <span>
+          <div className="research">
+            <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" />
+            <input
+              type="text"
+              name="header input"
+              placeholder="Recherche des articles"
+              value={research}
+              onChange={(event) => {
+                setResearch(event.target.value);
+              }}
+            />
+          </div>
+          <div>
+            <div>
+              <h5>trier par</h5>
+              <button
+                onClick={() => {
+                  setSort("price-desc");
+                }}
+              >
+                <FontAwesomeIcon icon="fa-solid fa-arrow-down" />
+              </button>
+              <button
+                onClick={() => {
+                  setSort("price-asc");
+                }}
+              >
+                <FontAwesomeIcon icon="fa-solid fa-arrow-up" />
+              </button>
+            </div>
+            <div>
+              <h5>trier par prix</h5>
+              <input
+                type="text"
+                name="header input"
+                placeholder="prix minimum"
+                value={prixMini}
+                onChange={(event) => {
+                  setPrixMini(event.target.value);
+                }}
+              ></input>
+
+              <input
+                type="text"
+                name="header input"
+                placeholder="prix maximum"
+                value={prixMaxi}
+                onChange={(event) => {
+                  setPrixMaxi(event.target.value);
+                }}
+              ></input>
+            </div>
+          </div>
+        </span>
+
         {token ? (
           <Link to="/">
             <button
@@ -55,7 +105,7 @@ const Header = ({
             <button>Vendre tes articles</button>
           </Link>
         </div>
-      </span>
+      </section>
     </header>
   );
 };
