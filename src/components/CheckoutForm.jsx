@@ -23,9 +23,9 @@ const CheckoutForm = ({ token, price, title }) => {
         "https://lereacteur-vinted-api.herokuapp.com/payment",
 
         {
-          token: { stripeToken },
-          title: { title },
-          amount: { price },
+          token: stripeToken,
+          title: title,
+          amount: price,
         }
       );
       console.log(responseFromBackend.data);
@@ -45,7 +45,7 @@ const CheckoutForm = ({ token, price, title }) => {
         <p>Paiement validé</p>
       ) : (
         <button type="submit" disabled={IsLoading}>
-          Paiement
+          Paiement ok
         </button>
       )}
     </form>
