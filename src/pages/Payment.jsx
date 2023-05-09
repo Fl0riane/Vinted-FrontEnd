@@ -1,5 +1,5 @@
 import { loadStripe } from "@stripe/stripe-js";
-import CheckoutForm from "./CheckoutForm";
+import CheckoutForm from "../components/CheckOutForm";
 import { Elements } from "@stripe/react-stripe-js";
 import { useLocation } from "react-router-dom";
 
@@ -11,7 +11,7 @@ const Payment = ({ token }) => {
   const location = useLocation();
   const { title, price } = location.state;
   return (
-    <div className="container">
+    <div className="grey">
       <Elements stripe={stripePromise}>
         <CheckoutForm token={token} title={title} price={price} />
       </Elements>

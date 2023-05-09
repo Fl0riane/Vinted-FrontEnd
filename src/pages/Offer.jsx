@@ -54,7 +54,10 @@ const Offer = ({ token }) => {
           <div>
             <Link
               to="/payment"
-              state={{ title: data.product_name, price: data.product_price }}
+              state={{
+                title: data.product_name,
+                price: data.product_price,
+              }}
             >
               <button>Acheter</button>
             </Link>

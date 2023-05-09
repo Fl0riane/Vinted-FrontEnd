@@ -22,6 +22,7 @@ library.add(faMagnifyingGlass);
 
 function App() {
   const [token, setToken] = useState(Cookies.get("vintedToken") || null);
+
   const [research, setResearch] = useState("");
 
   const handleToken = (token) => {
