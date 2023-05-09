@@ -20,7 +20,7 @@ const Offer = ({ offerData }) => {
 
         <img src={offerData.product_image.url} alt="article"></img>
 
-        <p className="price">{offerData.product_price} € </p>
+        <p className="price">{offerData.product_price} €</p>
         <div>
           {offerData.product_details.map((detail, index) => {
             // console.log(elem);

@@ -1,4 +1,4 @@
-import backgroundimg from "../img/photohome.jpg";
+import backgroundimg from "../assets/img/photohome.jpg";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import Offer from "../components/Offer";

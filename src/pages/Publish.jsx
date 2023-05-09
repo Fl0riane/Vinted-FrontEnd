@@ -70,7 +70,7 @@ const PublishForm = ({ token }) => {
               id="Titre"
               placeholder="ex: chemise noire"
               state={title}
-              stateState={setTitle}
+              setState={setTitle}
             />
             <PublishInput
               label="Description"
@@ -78,7 +78,7 @@ const PublishForm = ({ token }) => {
               id="Description"
               placeholder="ex: peu portée"
               state={description}
-              stateState={setDescription}
+              setState={setDescription}
             />
           </div>
           <div>
@@ -88,7 +88,7 @@ const PublishForm = ({ token }) => {
               id="Marque"
               placeholder="ex: Zara"
               state={marque}
-              stateState={setMarque}
+              setState={setMarque}
             />
             <PublishInput
               label="Taille"
@@ -96,7 +96,7 @@ const PublishForm = ({ token }) => {
               id="Taille"
               placeholder="ex: L/40"
               state={taille}
-              stateState={setTaille}
+              setState={setTaille}
             />
             <PublishInput
               label="Couleur"
@@ -104,15 +104,15 @@ const PublishForm = ({ token }) => {
               id="Couleur"
               placeholder="ex: Noire"
               state={couleur}
-              stateState={setCouleur}
+              setState={setCouleur}
             />
-            <PublishForm
+            <PublishInput
               label="Etat"
               type="text"
               id="Etat"
               placeholder="ex: neuf avec étiquette"
               state={etat}
-              stateState={setEtat}
+              setState={setEtat}
             />
             <PublishInput
               label="Lieu"
@@ -120,7 +120,7 @@ const PublishForm = ({ token }) => {
               id="Lieu"
               placeholder="ex: Tours"
               state={lieu}
-              stateState={setLieu}
+              setState={setLieu}
             />
           </div>
           <div>
@@ -130,7 +130,7 @@ const PublishForm = ({ token }) => {
               id="Prix"
               placeholder="ex: 40"
               state={prix}
-              stateState={setPrix}
+              setState={setPrix}
             />
             <input
               type="checkbox"

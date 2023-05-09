@@ -2,9 +2,9 @@ import "./modal.css";
 import { Link } from "react-router-dom";
 import "../LoginForm";
 import "../Form";
-import logoFb from "../../img/logofb.png";
-import logoGoogle from "../../img/logogoogle.png";
-import logoApple from "../../img/logoapple.png";
+import logoFb from "../../assets/img/logofb.png";
+import logoGoogle from "../../assets/img/logogoogle.png";
+import logoApple from "../../assets/img/logoapple.png";
 const Modal = ({ setVisible }) => {
   return (
     <div className="modal-root">

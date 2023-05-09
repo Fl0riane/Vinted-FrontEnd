@@ -2,20 +2,21 @@ import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import Cookies from "js-cookie";
+import Payment from "./components/Payment";
 
 /*-------Pages---------*/
-import Offer from "./assets/pages/Offer";
-import Home from "./assets/pages/Home";
-import NoMatch from "./assets/pages/NoMatch";
-import SignUp from "./assets/pages/SignUp";
-import Login from "./assets/pages/Login";
-import Publish from "./assets/pages/Publish";
+import Offer from "./pages/Offer";
+import Home from "./pages/Home";
+import NoMatch from "./pages/NoMatch";
+import SignUp from "./pages/SignUp";
+import Login from "./pages/Login";
+import Publish from "./pages/Publish";
 /*-------Components---------*/
-import Header from "./assets/components/Header";
-import Footer from "./assets/components/Footer";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-import Modal from "./assets/components/Modal";
+import Modal from "./components/Modal";
 
 library.add(faMagnifyingGlass);
 
@@ -56,6 +57,7 @@ function App() {
           <Route path="/login" element={<Login handleToken={handleToken} />} />
 
           <Route path="/publish" element={<Publish token={token} />} />
+          <Route path="/payment" element={<Payment token={token} />} />
         </Routes>
         <Footer />
         {visible && <Modal setVisible={setVisible} />}
