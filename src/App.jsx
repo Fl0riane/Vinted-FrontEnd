@@ -2,7 +2,7 @@ import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import Cookies from "js-cookie";
-import Payment from "./components/Payment";
+import Payment from "./pages/Payment";
 
 /*-------Pages---------*/
 import Offer from "./pages/Offer";
